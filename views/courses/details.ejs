@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<main class="container page">
+  <section class="panel details-panel">
+    <div class="details-head">
+      <div>
+        <h1><%= course.title %></h1>
+        <p class="subtitle">Информация о дисциплине</p>
+      </div>
+      <a class="btn btn-ghost" href="/courses">&larr; К списку курсов</a>
+    </div>
+
+    <dl class="course-info">
+      <div class="info-row">
+        <dt>Название дисциплины</dt>
+        <dd><%= course.title %></dd>
+      </div>
+      <div class="info-row">
+        <dt>Преподаватель</dt>
+        <dd><%= course.teacher %></dd>
+      </div>
+      <div class="info-row">
+        <dt>Количество кредитов</dt>
+        <dd><%= course.credits %></dd>
+      </div>
+      <div class="info-row">
+        <dt>Семестр</dt>
+        <dd><%= course.semester %></dd>
+      </div>
+      <div class="info-row">
+        <dt>Описание</dt>
+        <dd><%= course.description %></dd>
+      </div>
+    </dl>
+
+    <div class="details-actions">
+      <a class="btn btn-edit" href="/courses/<%= course.id %>/edit">Редактировать</a>
+      <form class="inline-form" action="/courses/<%= course.id %>/delete" method="POST" onsubmit="return confirm('Удалить этот курс?')">
+        <button class="btn btn-delete" type="submit">Удалить</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

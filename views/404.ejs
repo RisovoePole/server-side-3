@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<main class="container page">
+  <section class="panel error-panel">
+    <p class="error-code">404</p>
+    <h1>Страница не найдена</h1>
+    <p><%= message %></p>
+    <p class="requested-url">Запрошенный URL: <code><%= requestedUrl %></code></p>
+    <a class="btn btn-primary" href="/courses">Вернуться к списку курсов</a>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
